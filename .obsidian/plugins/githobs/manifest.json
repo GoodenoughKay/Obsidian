@@ -1,0 +1,11 @@
+{
+	"id": "githobs",
+	"name": "GitHobs",
+	"version": "1.1.1",
+	"minAppVersion": "0.15.0",
+	"description": "Use Obsidian as Github issue editor!",
+	"author": "GabAlpha and MarcoG",
+	"authorUrl": "https://github.com/GabAlpha",
+	"fundingUrl": "https://www.buymeacoffee.com/gabalpha",
+	"isDesktopOnly": true
+}
