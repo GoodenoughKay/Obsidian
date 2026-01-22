@@ -1,0 +1,6 @@
+/*
+!.obsidian/
+!*.md
+!.gitignore
+.DS_Store
+.obsidian/workspace.json
