@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "Transformer MoE.md",
-                "mode": "source",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
@@ -164,7 +164,7 @@
         }
       }
     ],
-    "currentTab": 3
+    "currentTab": 2
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -180,7 +180,7 @@
       "obsidian-excalidraw-plugin:新建绘图文件": false
     }
   },
-  "active": "89fe8cdd14323d58",
+  "active": "a5b085bc480e598f",
   "lastOpenFiles": [
     "Transformer.md"
   ]
