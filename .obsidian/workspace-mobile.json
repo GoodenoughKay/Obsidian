@@ -11,10 +11,14 @@
             "id": "350e4ac8b2a6bf4d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "各种题型.md",
+                "mode": "preview",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "各种题型"
             }
           }
         ]

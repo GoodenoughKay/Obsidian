@@ -9,5 +9,15 @@
     "margin": "0",
     "downscalePercent": 100
   },
-  "readableLineLength": false
+  "readableLineLength": false,
+  "showInlineTitle": true,
+  "useMarkdownLinks": false,
+  "foldIndent": true,
+  "showIndentGuide": true,
+  "spellcheck": true,
+  "useTab": true,
+  "smartIndentList": true,
+  "autoConvertHtml": true,
+  "livePreview": true,
+  "propertiesInDocument": "source"
 }

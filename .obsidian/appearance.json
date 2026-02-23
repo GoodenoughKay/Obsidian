@@ -1,5 +1,8 @@
 {
   "accentColor": "",
   "cssTheme": "",
-  "translucency": true
+  "translucency": true,
+  "showRibbon": true,
+  "showViewHeader": true,
+  "nativeMenus": true
 }
