@@ -144,7 +144,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "Transformer MoE.md",
+            "file": "各种题型.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -164,7 +164,7 @@
         }
       }
     ],
-    "currentTab": 2
+    "currentTab": 3
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,6 +183,8 @@
   },
   "active": "350e4ac8b2a6bf4d",
   "lastOpenFiles": [
+    "git pll.md",
+    "各种题型.md",
     "Transformer MoE.md",
     "Transformer.md"
   ]
