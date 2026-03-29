@@ -1,6 +1,17 @@
-/*
-!.obsidian/
-!*.md
-!.gitignore
+# 忽略系统自动生成的临时文件 (Mac 必备)
 .DS_Store
+.AppleDouble
+.LSOverride
+
+# 忽略 Obsidian 的工作区状态（避免每次打开软件都产生冲突推送到 GitHub）
 .obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/graph.json
+.obsidian/appearance.json
+
+# 如果你不想同步插件的缓存数据
+.obsidian/plugins/*/.cache
+
+# 允许上传所有其他内容（包括所有文件夹和 .md 文件）
+!/.obsidian/
+!/.gitignore
