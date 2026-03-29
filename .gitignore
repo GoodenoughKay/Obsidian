@@ -11,7 +11,3 @@
 
 # 如果你不想同步插件的缓存数据
 .obsidian/plugins/*/.cache
-
-# 允许上传所有其他内容（包括所有文件夹和 .md 文件）
-!/.obsidian/
-!/.gitignore
