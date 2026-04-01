@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "negf_note.md",
+                "file": "Transformer/Transformer基础框架.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "negf_note"
+              "title": "Transformer基础框架"
             }
           }
         ]
@@ -180,8 +180,8 @@
   },
   "active": "350e4ac8b2a6bf4d",
   "lastOpenFiles": [
-    "复数（Complex Number）.md",
     "negf_note.md",
+    "复数（Complex Number）.md",
     "量子力学基础.md",
     "git pll.md",
     "各种题型.md",
