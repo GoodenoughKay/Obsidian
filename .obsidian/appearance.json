@@ -1,12 +1,13 @@
 {
-  "accentColor": "",
-  "cssTheme": "Things",
+  "accentColor": "#007aff",
+  "cssTheme": "Baseline",
   "translucency": true,
-  "showRibbon": true,
-  "showViewHeader": true,
+  "showRibbon": false,
+  "showViewHeader": false,
   "nativeMenus": true,
   "baseFontSize": 16,
-  "textFontFamily": "",
-  "interfaceFontFamily": "",
-  "monospaceFontFamily": ""
+  "textFontFamily": "-apple-system",
+  "interfaceFontFamily": "-apple-system",
+  "monospaceFontFamily": "SF Mono",
+  "theme": "system"
 }
