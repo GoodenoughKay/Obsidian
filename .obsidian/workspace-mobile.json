@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Transformer/Transformer基础框架.md",
+                "file": "数学一/概率论/数理统计_第八章_假设检验.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Transformer基础框架"
+              "title": "数理统计_第八章_假设检验"
             }
           }
         ]
@@ -36,7 +36,7 @@
         "state": {
           "type": "file-explorer",
           "state": {
-            "sortOrder": "alphabetical",
+            "sortOrder": "byCreatedTimeReverse",
             "autoReveal": false
           },
           "icon": "lucide-folder-closed",
@@ -144,7 +144,7 @@
         "state": {
           "type": "outline",
           "state": {
-            "file": "量子力学基础.md",
+            "file": "数学一/概率论/数理统计_第八章_假设检验.md",
             "followCursor": false,
             "showSearch": false,
             "searchQuery": ""
@@ -180,6 +180,10 @@
   },
   "active": "350e4ac8b2a6bf4d",
   "lastOpenFiles": [
+    "数学一/概率论/概率论_第一章_随机事件与概率.md",
+    "数学一/概率论/概率论_第二章_随机变量及其分布.md",
+    "Transformer/基础知识.md",
+    "Transformer/Transformer基础框架.md",
     "negf_note.md",
     "复数（Complex Number）.md",
     "量子力学基础.md",
