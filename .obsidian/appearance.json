@@ -1,16 +1,16 @@
 {
-  "accentColor": "#007aff",
-  "cssTheme": "Baseline",
+  "accentColor": "",
+  "cssTheme": "",
   "translucency": true,
-  "showRibbon": false,
-  "showViewHeader": false,
+  "showRibbon": true,
+  "showViewHeader": true,
   "nativeMenus": true,
   "baseFontSize": 16,
-  "textFontFamily": "-apple-system,PingFang SC",
-  "interfaceFontFamily": "-apple-system,PingFang SC",
-  "monospaceFontFamily": "SF Mono,PingFang SC",
-  "theme": "system",
+  "textFontFamily": "",
+  "interfaceFontFamily": "",
+  "monospaceFontFamily": "",
   "enabledCssSnippets": [
-    "q"
+    "q",
+    "1"
   ]
 }

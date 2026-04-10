@@ -1,0 +1,239 @@
+/* Obsidian 排版与视觉层次优化片段 - Apple 设计风格 */
+
+body {
+    /* 启用 macOS 原生字体栈，优化中英文字体渲染 */
+    --font-text: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", sans-serif;
+    /* 优化代码块字体，使用 SF Mono */
+    --font-monospace: "SF Mono", Monaco, Menlo, Consolas, monospace;
+    
+    /* Apple 风格：舒适的行高与字号 */
+    line-height: 1.8;
+    font-size: 1em;
+    letter-spacing: 0.3px;
+}
+
+/* 段落与全局间距 */
+.markdown-preview-view p,
+.markdown-source-view.mod-cm6 .cm-paragraph {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.05em;
+    color: var(--text-normal);
+}
+
+/* ------------------- */
+/* 标题层次与间距重构  */
+/* ------------------- */
+.markdown-preview-view h1,
+.markdown-source-view.mod-cm6 .cm-header-1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-top: 1.8em;
+    margin-bottom: 0.6em;
+    color: var(--text-normal);
+    line-height: 1.2;
+}
+
+.markdown-preview-view h2,
+.markdown-source-view.mod-cm6 .cm-header-2 {
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
+    border-bottom: 1px solid var(--background-modifier-border);
+    padding-bottom: 0.3em;
+    color: var(--text-normal);
+    line-height: 1.3;
+}
+
+.markdown-preview-view h3,
+.markdown-source-view.mod-cm6 .cm-header-3 {
+    font-size: 1.4em;
+    font-weight: 600;
+    margin-top: 1.2em;
+    margin-bottom: 0.4em;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+.markdown-preview-view h4,
+.markdown-source-view.mod-cm6 .cm-header-4 {
+    font-size: 1.15em;
+    font-weight: 600;
+    margin-top: 1em;
+    margin-bottom: 0.3em;
+    color: var(--text-normal);
+    line-height: 1.3;
+}
+
+.markdown-preview-view h5,
+.markdown-source-view.mod-cm6 .cm-header-5 {
+    font-size: 1.05em;
+    font-weight: 600;
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+.markdown-preview-view h6,
+.markdown-source-view.mod-cm6 .cm-header-6 {
+    font-size: 0.95em;
+    font-weight: 600;
+    margin-top: 0.8em;
+    margin-bottom: 0.3em;
+    color: var(--text-muted);
+    line-height: 1.3;
+}
+
+/* ------------------- */
+/* 引用块 (Blockquote) */
+/* ------------------- */
+.markdown-rendered blockquote {
+    border-left: 2px solid var(--background-modifier-border);
+    padding: 0.5em 0 0.5em 1em;
+    margin: 1.5em 0;
+    font-style: normal;
+    color: var(--text-muted);
+    line-height: 1.8;
+}
+
+.markdown-rendered blockquote p {
+    margin: 0.5em 0;
+}
+
+/* ------------------- */
+/* 列表样式优化 */
+/* ------------------- */
+.markdown-preview-view ul,
+.markdown-preview-view ol {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-left: 2em;
+    line-height: 1.8;
+}
+
+.markdown-preview-view li {
+    margin-bottom: 0.5em;
+}
+
+.markdown-preview-view ul li:before {
+    margin-right: 0.6em;
+}
+
+.markdown-preview-view ol li {
+    padding-left: 0.4em;
+}
+
+/* ------------------- */
+/* 粗体与高亮强调      */
+/* ------------------- */
+strong {
+    font-weight: 700;
+    color: var(--text-normal);
+}
+
+em {
+    font-style: italic;
+    color: var(--text-normal);
+}
+
+/* 粗斜体 */
+strong em,
+em strong {
+    font-weight: 700;
+    font-style: italic;
+    color: var(--text-normal);
+}
+
+/* 内联代码 */
+code {
+    background-color: var(--background-secondary);
+    color: var(--text-normal);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-monospace);
+    font-size: 0.9em;
+}
+
+/* 链接 */
+a {
+    color: var(--interactive-accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+mark {
+    background-color: rgba(var(--color-accent-rgb), 0.15);
+    color: var(--text-normal);
+    border-radius: 2px;
+    padding: 1px 4px;
+}
+
+/* ------------------- */
+/* 代码块 */
+/* ------------------- */
+.markdown-preview-view pre {
+    background-color: var(--background-secondary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 8px;
+    padding: 1.2em;
+    margin: 1.5em 0;
+    overflow-x: auto;
+    line-height: 1.6;
+}
+
+.markdown-preview-view pre code {
+    background-color: transparent;
+    color: #ddd;
+    padding: 0;
+    font-size: 0.95em;
+    border-radius: 0;
+}
+
+body.theme-light pre code {
+    color: #333;
+}
+
+/* ------------------- */
+/* 表格 */
+/* ------------------- */
+.markdown-preview-view table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1.5em 0;
+    line-height: 1.8;
+}
+
+.markdown-preview-view th,
+.markdown-preview-view td {
+    border: 1px solid var(--background-modifier-border);
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.markdown-preview-view th {
+    background-color: var(--background-secondary);
+    font-weight: 600;
+    color: var(--text-normal);
+}
+
+.markdown-preview-view tr:nth-child(even) {
+    background-color: var(--background-secondary);
+}
+
+/* ------------------- */
+/* 分隔线 */
+/* ------------------- */
+.markdown-preview-view hr {
+    border: none;
+    height: 1px;
+    background-color: var(--background-modifier-border);
+    margin: 2em 0;
+}
