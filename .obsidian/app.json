@@ -10,7 +10,7 @@
     "downscalePercent": 100
   },
   "readableLineLength": false,
-  "showInlineTitle": true,
+  "showInlineTitle": false,
   "useMarkdownLinks": false,
   "foldIndent": true,
   "showIndentGuide": true,
