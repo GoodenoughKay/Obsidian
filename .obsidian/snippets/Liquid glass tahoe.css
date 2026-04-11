@@ -3,6 +3,8 @@
    macOS 26 Tahoe "Liquid Glass" 风格
    追求 Apple Books / Apple Notes 级别的阅读体验
 
+   仅保留正文相关样式
+
    安装：Vault/.obsidian/snippets/ → 设置 → 外观 → 启用
    ============================================================ */
 
@@ -12,23 +14,11 @@
    ══════════════════════════════════════════════ */
 
 .theme-light {
-  --glass-bg: rgba(255, 255, 255, 0.55);
-  --glass-bg-thick: rgba(255, 255, 255, 0.72);
-  --glass-bg-thin: rgba(245, 245, 247, 0.45);
-  --glass-border: rgba(0, 0, 0, 0.08);
-  --glass-shadow: rgba(0, 0, 0, 0.05);
-  --glass-highlight: rgba(255, 255, 255, 0.80);
-  --glass-blur: 18px;
-
   --color-h1: #1d1d1f;
   --color-h2-text: #1d1d1f;
   --color-h2-bg: rgba(0, 122, 255, 0.07);
   --color-h2-border: #007AFF;
   --color-link: #007AFF;
-  --color-link-bg: rgba(0, 122, 255, 0.08);
-  --color-tag-bg: rgba(88, 86, 214, 0.10);
-  --color-tag-text: #5856D6;
-  --color-tag-border: rgba(88, 86, 214, 0.12);
   --color-quote-border: #34C759;
   --color-quote-bg: rgba(52, 199, 89, 0.05);
   --color-inline-code-bg: rgba(175, 82, 222, 0.08);
@@ -40,10 +30,6 @@
   --color-checkbox-fill: #34C759;
   --color-list-marker: #8E8E93;
   --color-ol-marker: #5856D6;
-  --color-folder-icon: #FF9500;
-  --color-active-file-bg: rgba(0, 122, 255, 0.08);
-  --color-active-file-text: #007AFF;
-  --color-selected-bg: rgba(0, 122, 255, 0.08);
   --color-h1-underline: rgba(0, 0, 0, 0.08);
   --color-hr: rgba(0, 0, 0, 0.06);
   --color-selection: rgba(0, 122, 255, 0.18);
@@ -54,27 +40,14 @@
   --radius-s: 8px;
   --radius-m: 12px;
   --radius-l: 16px;
-  --radius-pill: 980px;
 }
 
 .theme-dark {
-  --glass-bg: rgba(44, 44, 46, 0.60);
-  --glass-bg-thick: rgba(44, 44, 46, 0.78);
-  --glass-bg-thin: rgba(44, 44, 46, 0.35);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-shadow: rgba(0, 0, 0, 0.30);
-  --glass-highlight: rgba(255, 255, 255, 0.05);
-  --glass-blur: 18px;
-
   --color-h1: #f5f5f7;
   --color-h2-text: #f5f5f7;
   --color-h2-bg: rgba(10, 132, 255, 0.10);
   --color-h2-border: #0A84FF;
   --color-link: #0A84FF;
-  --color-link-bg: rgba(10, 132, 255, 0.12);
-  --color-tag-bg: rgba(94, 92, 230, 0.18);
-  --color-tag-text: #7D7AFF;
-  --color-tag-border: rgba(94, 92, 230, 0.15);
   --color-quote-border: #30D158;
   --color-quote-bg: rgba(48, 209, 88, 0.06);
   --color-inline-code-bg: rgba(191, 90, 242, 0.12);
@@ -86,10 +59,6 @@
   --color-checkbox-fill: #30D158;
   --color-list-marker: #98989D;
   --color-ol-marker: #7D7AFF;
-  --color-folder-icon: #FF9F0A;
-  --color-active-file-bg: rgba(10, 132, 255, 0.12);
-  --color-active-file-text: #0A84FF;
-  --color-selected-bg: rgba(10, 132, 255, 0.12);
   --color-h1-underline: rgba(255, 255, 255, 0.08);
   --color-hr: rgba(255, 255, 255, 0.06);
   --color-selection: rgba(10, 132, 255, 0.30);
@@ -100,7 +69,6 @@
   --radius-s: 8px;
   --radius-m: 12px;
   --radius-l: 16px;
-  --radius-pill: 980px;
 }
 
 
@@ -126,89 +94,32 @@ body {
 
 
 /* ══════════════════════════════════════════════
-   3. 侧边栏 — Liquid Glass 透明面板
-   ══════════════════════════════════════════════ */
-
-.workspace-split.mod-left-split {
-  background: var(--glass-bg) !important;
-  backdrop-filter: blur(var(--glass-blur)) saturate(1.6);
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.6);
-  border-right: 1px solid var(--glass-border) !important;
-}
-
-.workspace-split.mod-right-split {
-  background: var(--glass-bg) !important;
-  backdrop-filter: blur(var(--glass-blur)) saturate(1.6);
-  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(1.6);
-  border-left: 1px solid var(--glass-border) !important;
-}
-
-.nav-files-container {
-  background: transparent !important;
-}
-
-.workspace-tab-header-container {
-  background: var(--glass-bg-thin) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--glass-border);
-}
-
-
-/* ══════════════════════════════════════════════
-   4. 标签栏 — pill 形选中态
-   ══════════════════════════════════════════════ */
-
-.workspace-tab-header {
-  border-radius: var(--radius-pill) !important;
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  margin: 3px 2px;
-  padding: 2px 12px !important;
-}
-
-.workspace-tab-header.is-active {
-  background: var(--glass-bg-thick) !important;
-  box-shadow:
-    0 1px 3px var(--glass-shadow),
-    inset 0 1px 0 var(--glass-highlight);
-  border-radius: var(--radius-pill) !important;
-}
-
-.workspace-tab-header:hover:not(.is-active) {
-  background: var(--glass-bg-thin) !important;
-  border-radius: var(--radius-pill) !important;
-}
-
-
-/* ══════════════════════════════════════════════
-   5. 编辑器区域 — Apple 原生字体 + 呼吸感排版
+   3. 编辑器区域 — Apple 原生字体 + 呼吸感排版
    模仿 Apple Books 的阅读舒适度
    ══════════════════════════════════════════════ */
 
 .markdown-source-view.mod-cm,
 .markdown-preview-view {
-  padding: 32px 42px 80px 42px !important;
-  font-size: 17px;
-  line-height: 1.8;
-  letter-spacing: 0.012em;
-  word-spacing: 0.05em;
+  padding: 28px 36px 70px 36px !important;
+  font-size: 18px;
+  line-height: 1.78;
+  letter-spacing: 0.015em;
 }
 
+/* 阅读模式：苹方为主，中文渲染最舒服 */
 .markdown-preview-view {
   font-family:
-    "SF Pro Display",
-    "SF Pro Text",
-    -apple-system,
     "PingFang SC",
+    -apple-system,
     system-ui,
     sans-serif;
 }
 
+/* 编辑模式 */
 .markdown-source-view.mod-cm {
   font-family:
-    "SF Pro Text",
-    -apple-system,
     "PingFang SC",
+    -apple-system,
     system-ui,
     sans-serif;
 }
@@ -216,13 +127,13 @@ body {
 .cm-s-obsidian .cm-inline-code,
 .markdown-preview-view code,
 .markdown-source-view code {
-  font-family: "SF Mono", "Menlo", monospace;
-  font-size: 0.88em;
+  font-family: "Menlo", "SF Mono", monospace;
+  font-size: 0.9em;
 }
 
-/* 段落间距 — Apple Books 级别的呼吸感 */
+/* 段落间距 */
 .markdown-preview-view p {
-  margin-bottom: 1.15em;
+  margin-bottom: 0.9em;
 }
 
 
@@ -289,32 +200,22 @@ body {
 
 
 /* ══════════════════════════════════════════════
-   8. 引用块 — 绿色左边框 + 玻璃卡片
+   8. 引用块 — 绿色左边框 + 淡绿背景
    ══════════════════════════════════════════════ */
 
 .markdown-preview-view blockquote {
   background: var(--color-quote-bg);
-  backdrop-filter: blur(10px) saturate(1.4);
-  -webkit-backdrop-filter: blur(10px) saturate(1.4);
-  border: 1px solid var(--glass-border);
+  border: none;
   border-left: 3px solid var(--color-quote-border);
   border-radius: var(--radius-m);
   padding: 16px 20px;
   margin: 20px 0;
-  box-shadow: 0 2px 8px var(--glass-shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.markdown-preview-view blockquote:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px var(--glass-shadow);
 }
 
 .markdown-preview-view blockquote strong {
   color: var(--text-normal);
 }
 
-/* 引用块内段落间距稍紧凑 */
 .markdown-preview-view blockquote p {
   margin-bottom: 0.6em;
 }
@@ -343,8 +244,8 @@ body {
 .markdown-preview-view pre,
 .cm-s-obsidian .HyperMD-codeblock-bg {
   border-radius: var(--radius-m) !important;
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 2px 10px var(--glass-shadow);
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0 2px 10px var(--background-modifier-border);
   margin: 20px 0 !important;
 }
 
@@ -376,7 +277,8 @@ body {
 
 
 /* ══════════════════════════════════════════════
-   12. 表格 — 暖橙悬停 + 圆角
+   12. 表格 — 圆角 + 条纹 + 暖橙悬停
+   边框颜色用 Obsidian 默认变量，不硬编码
    ══════════════════════════════════════════════ */
 
 .markdown-preview-view table {
@@ -385,8 +287,7 @@ body {
   border-spacing: 0;
   border-radius: var(--radius-m);
   overflow: hidden;
-  border: 1px solid var(--glass-border);
-  box-shadow: 0 2px 8px var(--glass-shadow);
+  border: 1px solid var(--background-modifier-border);
   margin: 24px 0;
 }
 
@@ -396,16 +297,16 @@ body {
 
 .markdown-preview-view th {
   font-weight: 600;
-  font-size: 0.92em;
+  font-size: 0.94em;
   padding: 10px 14px;
-  border-bottom: 1.5px solid var(--glass-border);
+  border-bottom: 1.5px solid var(--background-modifier-border);
   text-align: left;
 }
 
 .markdown-preview-view td {
   padding: 9px 14px;
-  border-bottom: 1px solid var(--glass-border);
-  font-size: 0.94em;
+  border-bottom: 1px solid var(--background-modifier-border);
+  font-size: 0.95em;
 }
 
 .markdown-preview-view tbody tr:nth-child(even) {
@@ -419,53 +320,6 @@ body {
 
 .markdown-preview-view tbody tr:last-child td {
   border-bottom: none;
-}
-
-
-/* ══════════════════════════════════════════════
-   13. YAML Frontmatter — 半透明信息卡
-   ══════════════════════════════════════════════ */
-
-.frontmatter-container {
-  background: var(--glass-bg) !important;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--glass-border) !important;
-  border-radius: var(--radius-l) !important;
-  padding: 16px 20px !important;
-  margin-bottom: 28px !important;
-  box-shadow: 0 2px 12px var(--glass-shadow);
-}
-
-.frontmatter-container .frontmatter-section-label {
-  font-weight: 600;
-  font-size: 0.82em;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  opacity: 0.6;
-}
-
-
-/* ══════════════════════════════════════════════
-   14. 标签 — 靛蓝 pill
-   ══════════════════════════════════════════════ */
-
-a.tag,
-.frontmatter-container .tag {
-  background: var(--color-tag-bg) !important;
-  color: var(--color-tag-text) !important;
-  border-radius: var(--radius-pill) !important;
-  padding: 2px 10px !important;
-  font-size: 0.84em;
-  font-weight: 500;
-  border: 1px solid var(--color-tag-border);
-  transition: all 0.2s ease;
-  text-decoration: none !important;
-}
-
-a.tag:hover {
-  filter: brightness(1.15);
-  box-shadow: 0 2px 8px var(--glass-shadow);
 }
 
 
@@ -526,15 +380,12 @@ a.tag:hover {
    ══════════════════════════════════════════════ */
 
 .markdown-preview-view details {
-  background: var(--glass-bg);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid var(--glass-border);
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--background-modifier-border);
   border-radius: var(--radius-m);
   padding: 0;
   margin: 20px 0;
   overflow: hidden;
-  box-shadow: 0 1px 6px var(--glass-shadow);
 }
 
 .markdown-preview-view details summary {
@@ -547,11 +398,11 @@ a.tag:hover {
 }
 
 .markdown-preview-view details summary:hover {
-  background: var(--glass-bg-thin);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .markdown-preview-view details[open] summary {
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--background-modifier-border);
   border-radius: var(--radius-m) var(--radius-m) 0 0;
 }
 
@@ -647,152 +498,14 @@ a.tag:hover {
 
 
 /* ══════════════════════════════════════════════
-   21. 滚动条 — macOS 原生细滚动条
-   ══════════════════════════════════════════════ */
-
-::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.theme-light ::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.15);
-  border-radius: var(--radius-pill);
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-.theme-light ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 0, 0, 0.28);
-  background-clip: content-box;
-}
-
-.theme-dark ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-pill);
-  border: 2px solid transparent;
-  background-clip: content-box;
-}
-
-.theme-dark ::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.22);
-  background-clip: content-box;
-}
-
-
-/* ══════════════════════════════════════════════
-   22. 命令面板 — Spotlight 玻璃
-   ══════════════════════════════════════════════ */
-
-.prompt {
-  background: var(--glass-bg-thick) !important;
-  backdrop-filter: blur(24px) saturate(1.8) !important;
-  -webkit-backdrop-filter: blur(24px) saturate(1.8) !important;
-  border: 1px solid var(--glass-border) !important;
-  border-radius: var(--radius-l) !important;
-  box-shadow:
-    0 8px 40px var(--glass-shadow),
-    0 2px 8px var(--glass-shadow),
-    inset 0 1px 0 var(--glass-highlight) !important;
-}
-
-.prompt-input {
-  font-size: 1.1em;
-  padding: 12px 16px;
-}
-
-.suggestion-item.is-selected {
-  background: var(--color-selected-bg) !important;
-  border-radius: var(--radius-s);
-}
-
-
-/* ══════════════════════════════════════════════
-   23. Tooltip & Popover
-   ══════════════════════════════════════════════ */
-
-.tooltip {
-  background: var(--glass-bg-thick) !important;
-  backdrop-filter: blur(16px) !important;
-  -webkit-backdrop-filter: blur(16px) !important;
-  border: 1px solid var(--glass-border) !important;
-  border-radius: var(--radius-s) !important;
-  box-shadow: 0 4px 16px var(--glass-shadow) !important;
-}
-
-.popover {
-  background: var(--glass-bg-thick) !important;
-  backdrop-filter: blur(20px) saturate(1.5) !important;
-  -webkit-backdrop-filter: blur(20px) saturate(1.5) !important;
-  border: 1px solid var(--glass-border) !important;
-  border-radius: var(--radius-l) !important;
-  box-shadow: 0 8px 32px var(--glass-shadow) !important;
-}
-
-
-/* ══════════════════════════════════════════════
-   24. 文件浏览器
-   ══════════════════════════════════════════════ */
-
-.nav-file-title,
-.nav-folder-title {
-  border-radius: var(--radius-s);
-  padding: 3px 10px;
-  transition: background 0.15s ease;
-}
-
-.nav-file-title:hover,
-.nav-folder-title:hover {
-  background: var(--glass-bg-thin);
-}
-
-.nav-file-title.is-active {
-  background: var(--color-active-file-bg) !important;
-  color: var(--color-active-file-text);
-  font-weight: 550;
-}
-
-.nav-folder-collapse-indicator {
-  color: var(--color-folder-icon);
-}
-
-
-/* ══════════════════════════════════════════════
-   25. Modal — 统一玻璃
-   ══════════════════════════════════════════════ */
-
-.modal-container .modal {
-  background: var(--glass-bg-thick) !important;
-  backdrop-filter: blur(20px) saturate(1.5);
-  -webkit-backdrop-filter: blur(20px) saturate(1.5);
-  border: 1px solid var(--glass-border);
-  border-radius: var(--radius-l) !important;
-  box-shadow: 0 12px 48px var(--glass-shadow);
-}
-
-
-/* ══════════════════════════════════════════════
-   26. 微交互 — 克制但精致
-   ══════════════════════════════════════════════ */
-
-.workspace-split {
-  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-
-/* ══════════════════════════════════════════════
-   27. 13 寸屏幕适配
+   21. 13 寸屏幕适配
    ══════════════════════════════════════════════ */
 
 @media screen and (max-width: 1440px) {
   .markdown-source-view.mod-cm,
   .markdown-preview-view {
-    padding: 24px 32px 60px 32px !important;
-    font-size: 16px;
+    padding: 20px 28px 60px 28px !important;
+    font-size: 17px;
   }
 
   .markdown-preview-view h1 { font-size: 1.7em; }
@@ -802,7 +515,7 @@ a.tag:hover {
 
 
 /* ══════════════════════════════════════════════
-   28. 打印 / 导出 PDF
+   22. 打印 / 导出 PDF
    ══════════════════════════════════════════════ */
 
 @media print {
