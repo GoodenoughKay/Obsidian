@@ -11,3 +11,5 @@
 
 # 如果你不想同步插件的缓存数据
 .obsidian/plugins/*/.cache
+
+调剂/
