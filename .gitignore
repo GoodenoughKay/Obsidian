@@ -12,8 +12,4 @@
 # 如果你不想同步插件的缓存数据
 .obsidian/plugins/*/.cache
 
-<<<<<<< HEAD
 /调剂/
-=======
-调剂/
->>>>>>> origin/main
