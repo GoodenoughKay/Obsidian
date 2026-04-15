@@ -4,7 +4,7 @@
   "translucency": true,
   "showRibbon": false,
   "showViewHeader": false,
-  "nativeMenus": true,
+  "nativeMenus": false,
   "baseFontSize": 16,
   "textFontFamily": "",
   "interfaceFontFamily": "",
