@@ -337,9 +337,9 @@ Cache 行数 = 256，$\log_2(256) = 8$ 位
 
 取中间 8 位（Index，位 6~13）：
 
-$0x00001A40 = \cdots\ \underbrace{0001\ 1010}_{Index=0x1A=26}\ \underbrace{01\ 0000}_{Offset}$
+$0x00001A40 = \cdots\ \underbrace{0110\ 1001}_{Index=0x69=105}\ \underbrace{00\ 0000}_{Offset}$
 
-所以 $0x00001A40$ 映射到 Cache **第 26 行**。
+所以 $0x00001A40$ 映射到 Cache **第 106 行**。
 
 **(b) 8 路组相联**：
 
