@@ -1,15 +1,22 @@
-# 忽略系统自动生成的临时文件 (Mac 必备)
+# 忽略系统自动生成的临时文件
 .DS_Store
 .AppleDouble
 .LSOverride
 
-# 忽略 Obsidian 的工作区状态（避免每次打开软件都产生冲突推送到 GitHub）
+# 忽略 Obsidian 的工作区状态
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/graph.json
-.obsidian/appearance.json
+# 注意：如果你想让不同设备的字体、外观一致，建议删除下面这行，保留 appearance.json
+# .obsidian/appearance.json
 
 # 如果你不想同步插件的缓存数据
 .obsidian/plugins/*/.cache
 
-/调剂/
+# --- 你的自定义部分修正 ---
+
+# 忽略所有 PDF 文件 
+*.pdf
+
+# 忽略“调剂”文件夹下的所有内容
+调剂/
