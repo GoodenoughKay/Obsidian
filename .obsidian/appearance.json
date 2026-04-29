@@ -1,0 +1,17 @@
+{
+  "accentColor": "",
+  "cssTheme": "Blue Topaz",
+  "translucency": true,
+  "showRibbon": false,
+  "showViewHeader": false,
+  "nativeMenus": false,
+  "baseFontSize": 16,
+  "textFontFamily": "",
+  "interfaceFontFamily": "",
+  "monospaceFontFamily": "",
+  "enabledCssSnippets": [
+    "q",
+    "1",
+    "Liquid glass tahoe"
+  ]
+}

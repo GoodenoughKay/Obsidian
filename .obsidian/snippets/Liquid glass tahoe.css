@@ -1,0 +1,538 @@
+/* ============================================================
+   🪟 Liquid Glass Tahoe — Obsidian CSS Snippet v4
+   macOS 26 Tahoe "Liquid Glass" 风格
+   追求 Apple Books / Apple Notes 级别的阅读体验
+
+   仅保留正文相关样式
+
+   安装：Vault/.obsidian/snippets/ → 设置 → 外观 → 启用
+   ============================================================ */
+
+
+/* ══════════════════════════════════════════════
+   0. 调色板 — 浅色 / 深色 完整双模式
+   ══════════════════════════════════════════════ */
+
+.theme-light {
+  --color-h1: #1d1d1f;
+  --color-h2-text: #1d1d1f;
+  --color-h2-bg: rgba(0, 122, 255, 0.07);
+  --color-h2-border: #007AFF;
+  --color-link: #007AFF;
+  --color-quote-border: #34C759;
+  --color-quote-bg: rgba(52, 199, 89, 0.05);
+  --color-inline-code-bg: rgba(175, 82, 222, 0.08);
+  --color-inline-code-border: rgba(175, 82, 222, 0.10);
+  --color-table-hover: rgba(255, 149, 0, 0.08);
+  --color-table-stripe: rgba(0, 0, 0, 0.02);
+  --color-table-header-bg: rgba(0, 0, 0, 0.03);
+  --color-checkbox-border: rgba(52, 199, 89, 0.45);
+  --color-checkbox-fill: #34C759;
+  --color-list-marker: #8E8E93;
+  --color-ol-marker: #5856D6;
+  --color-h1-underline: rgba(0, 0, 0, 0.08);
+  --color-hr: rgba(0, 0, 0, 0.06);
+  --color-selection: rgba(0, 122, 255, 0.18);
+  --color-img-shadow: rgba(0, 0, 0, 0.08);
+  --color-bold: #1d1d1f;
+  --color-footnote: #86868b;
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+}
+
+.theme-dark {
+  --color-h1: #f5f5f7;
+  --color-h2-text: #f5f5f7;
+  --color-h2-bg: rgba(10, 132, 255, 0.10);
+  --color-h2-border: #0A84FF;
+  --color-link: #0A84FF;
+  --color-quote-border: #30D158;
+  --color-quote-bg: rgba(48, 209, 88, 0.06);
+  --color-inline-code-bg: rgba(191, 90, 242, 0.12);
+  --color-inline-code-border: rgba(191, 90, 242, 0.10);
+  --color-table-hover: rgba(255, 159, 10, 0.10);
+  --color-table-stripe: rgba(255, 255, 255, 0.02);
+  --color-table-header-bg: rgba(255, 255, 255, 0.04);
+  --color-checkbox-border: rgba(48, 209, 88, 0.45);
+  --color-checkbox-fill: #30D158;
+  --color-list-marker: #98989D;
+  --color-ol-marker: #7D7AFF;
+  --color-h1-underline: rgba(255, 255, 255, 0.08);
+  --color-hr: rgba(255, 255, 255, 0.06);
+  --color-selection: rgba(10, 132, 255, 0.30);
+  --color-img-shadow: rgba(0, 0, 0, 0.40);
+  --color-bold: #f5f5f7;
+  --color-footnote: #98989d;
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 16px;
+}
+
+
+/* ══════════════════════════════════════════════
+   1. 全局字体渲染 — macOS 级别的抗锯齿
+   Apple 的 app 都用 subpixel 或 antialiased 渲染
+   ══════════════════════════════════════════════ */
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+/* ══════════════════════════════════════════════
+   2. 文字选中高亮 — macOS 系统蓝选中色
+   ══════════════════════════════════════════════ */
+
+::selection {
+  background: var(--color-selection);
+}
+
+
+/* ══════════════════════════════════════════════
+   3. 编辑器区域 — Apple 原生字体 + 呼吸感排版
+   模仿 Apple Books 的阅读舒适度
+   ══════════════════════════════════════════════ */
+
+.markdown-source-view.mod-cm,
+.markdown-preview-view {
+  padding: 28px 36px 70px 36px !important;
+  font-size: 18px;
+  line-height: 1.78;
+  letter-spacing: 0.015em;
+}
+
+/* 阅读模式：苹方为主，中文渲染最舒服 */
+.markdown-preview-view {
+  font-family:
+    "PingFang SC",
+    -apple-system,
+    system-ui,
+    sans-serif;
+}
+
+/* 编辑模式 */
+.markdown-source-view.mod-cm {
+  font-family:
+    "PingFang SC",
+    -apple-system,
+    system-ui,
+    sans-serif;
+}
+
+.cm-s-obsidian .cm-inline-code,
+.markdown-preview-view code,
+.markdown-source-view code {
+  font-family: "Menlo", "SF Mono", monospace;
+  font-size: 0.9em;
+}
+
+/* 段落间距 */
+.markdown-preview-view p {
+  margin-bottom: 0.9em;
+}
+
+
+/* ══════════════════════════════════════════════
+   6. 标题 — 每级不同处理
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view h1,
+.cm-header-1 {
+  color: var(--color-h1);
+  font-weight: 700;
+  font-size: 1.85em;
+  letter-spacing: -0.025em;
+  margin-top: 0.6em;
+  margin-bottom: 0.7em;
+  padding-bottom: 0.3em;
+  border-bottom: 1.5px solid var(--color-h1-underline);
+}
+
+.markdown-preview-view h2,
+.cm-header-2 {
+  color: var(--color-h2-text);
+  font-weight: 650;
+  font-size: 1.45em;
+  letter-spacing: -0.015em;
+  margin-top: 2.2em;
+  margin-bottom: 0.6em;
+  padding: 8px 16px;
+  border-radius: var(--radius-m);
+  background: var(--color-h2-bg);
+  border-left: 3px solid var(--color-h2-border);
+}
+
+.markdown-preview-view h3,
+.cm-header-3 {
+  font-weight: 600;
+  font-size: 1.2em;
+  margin-top: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.markdown-preview-view h4,
+.cm-header-4 {
+  font-weight: 600;
+  font-size: 1.05em;
+  margin-top: 1.5em;
+  margin-bottom: 0.4em;
+  opacity: 0.75;
+}
+
+
+/* ══════════════════════════════════════════════
+   7. 粗体 & 斜体 — 不覆盖颜色，保留默认主题的处理
+   只微调字重，让扫读时能快速定位关键词
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view strong {
+  font-weight: 650;
+}
+
+.markdown-preview-view em {
+  font-style: italic;
+}
+
+
+/* ══════════════════════════════════════════════
+   8. 引用块 — 绿色左边框 + 淡绿背景
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view blockquote {
+  background: var(--color-quote-bg);
+  border: none;
+  border-left: 3px solid var(--color-quote-border);
+  border-radius: var(--radius-m);
+  padding: 16px 20px;
+  margin: 20px 0;
+}
+
+.markdown-preview-view blockquote strong {
+  color: var(--text-normal);
+}
+
+.markdown-preview-view blockquote p {
+  margin-bottom: 0.6em;
+}
+
+.markdown-preview-view blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* ══════════════════════════════════════════════
+   9. 分割线 hr — Apple 风格极细淡线
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view hr {
+  border: none;
+  height: 0.5px;
+  background: var(--color-hr);
+  margin: 2.5em 0;
+}
+
+
+/* ══════════════════════════════════════════════
+   10. 代码块 — 圆角 + 细微阴影
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view pre,
+.cm-s-obsidian .HyperMD-codeblock-bg {
+  border-radius: var(--radius-m) !important;
+  border: 1px solid var(--background-modifier-border);
+  box-shadow: 0 2px 10px var(--background-modifier-border);
+  margin: 20px 0 !important;
+}
+
+/* 行内代码 — 淡紫 pill */
+.markdown-preview-view code:not(pre code) {
+  background: var(--color-inline-code-bg);
+  border: 1px solid var(--color-inline-code-border);
+  border-radius: var(--radius-s);
+  padding: 2px 7px;
+  font-size: 0.88em;
+}
+
+
+/* ══════════════════════════════════════════════
+   11. 图片 — 圆角 + 柔和阴影
+   像 Apple Notes 里贴入的图片一样
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view img:not(.emoji) {
+  border-radius: var(--radius-m);
+  box-shadow: 0 2px 12px var(--color-img-shadow);
+  margin: 8px 0;
+  transition: box-shadow 0.2s ease;
+}
+
+.markdown-preview-view img:not(.emoji):hover {
+  box-shadow: 0 4px 20px var(--color-img-shadow);
+}
+
+
+/* ══════════════════════════════════════════════
+   12. 表格 — 圆角 + 条纹 + 暖橙悬停
+   边框颜色用 Obsidian 默认变量，不硬编码
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--radius-m);
+  overflow: hidden;
+  border: 1px solid var(--background-modifier-border);
+  margin: 24px 0;
+}
+
+.markdown-preview-view thead tr {
+  background: var(--color-table-header-bg);
+}
+
+.markdown-preview-view th {
+  font-weight: 600;
+  font-size: 0.94em;
+  padding: 10px 14px;
+  border-bottom: 1.5px solid var(--background-modifier-border);
+  text-align: left;
+}
+
+.markdown-preview-view td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  font-size: 0.95em;
+}
+
+.markdown-preview-view tbody tr:nth-child(even) {
+  background: var(--color-table-stripe);
+}
+
+.markdown-preview-view tbody tr:hover {
+  background: var(--color-table-hover);
+  transition: background 0.15s ease;
+}
+
+.markdown-preview-view tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* ══════════════════════════════════════════════
+   15. Wiki 双链 — Apple 风格链接
+   默认无下划线，悬停时出现（和 apple.com 一致）
+   ══════════════════════════════════════════════ */
+
+.internal-link {
+  color: var(--color-link) !important;
+  text-decoration: none !important;
+  border-bottom: none;
+  transition: all 0.2s ease;
+}
+
+.internal-link:hover {
+  border-bottom: 1.5px solid var(--color-link);
+}
+
+.internal-link.is-unresolved {
+  opacity: 0.55;
+}
+
+.internal-link.is-unresolved:hover {
+  border-bottom-style: dashed;
+}
+
+/* 外部链接也统一 Apple 风格 */
+.markdown-preview-view .external-link {
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.markdown-preview-view .external-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1.5px;
+}
+
+
+/* ══════════════════════════════════════════════
+   16. Mermaid 图表 — 保持默认，只确保不限宽
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view .mermaid {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.markdown-preview-view .mermaid svg {
+  max-width: none !important;
+  height: auto;
+}
+
+
+/* ══════════════════════════════════════════════
+   17. 折叠块 <details>
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view details {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m);
+  padding: 0;
+  margin: 20px 0;
+  overflow: hidden;
+}
+
+.markdown-preview-view details summary {
+  padding: 10px 16px;
+  cursor: pointer;
+  font-weight: 550;
+  user-select: none;
+  border-radius: var(--radius-m);
+  transition: background 0.15s ease;
+}
+
+.markdown-preview-view details summary:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.markdown-preview-view details[open] summary {
+  border-bottom: 1px solid var(--background-modifier-border);
+  border-radius: var(--radius-m) var(--radius-m) 0 0;
+}
+
+.markdown-preview-view details > *:not(summary) {
+  padding: 4px 16px;
+}
+
+
+/* ══════════════════════════════════════════════
+   18. 列表 — 柔和标记色 + 绿色复选框
+   ══════════════════════════════════════════════ */
+
+.markdown-preview-view ul > li::marker {
+  color: var(--color-list-marker);
+}
+
+.markdown-preview-view ol > li::marker {
+  color: var(--color-ol-marker);
+  font-weight: 600;
+}
+
+/* 列表项行间距 */
+.markdown-preview-view li {
+  margin-bottom: 0.3em;
+}
+
+/* 复选框 */
+.markdown-preview-view .task-list-item-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--color-checkbox-border);
+  border-radius: 5px;
+  margin-right: 8px;
+  position: relative;
+  top: 3px;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.markdown-preview-view .task-list-item-checkbox:checked {
+  background: var(--color-checkbox-fill);
+  border-color: var(--color-checkbox-fill);
+}
+
+.markdown-preview-view .task-list-item-checkbox:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+/* ══════════════════════════════════════════════
+   19. 数学公式 — 干净无装饰
+   ══════════════════════════════════════════════ */
+
+.MathJax {
+  font-size: 1.1em !important;
+}
+
+.math-block {
+  margin: 24px 0;
+  overflow-x: auto;
+}
+
+
+/* ══════════════════════════════════════════════
+   20. 脚注 — Apple Books 风格小号灰色
+   ══════════════════════════════════════════════ */
+
+.footnotes {
+  margin-top: 3em;
+  padding-top: 1.5em;
+  border-top: 0.5px solid var(--color-hr);
+  font-size: 0.88em;
+  color: var(--color-footnote);
+  line-height: 1.6;
+}
+
+.footnote-ref a {
+  font-size: 0.8em;
+  vertical-align: super;
+  text-decoration: none;
+  color: var(--color-link);
+  font-weight: 600;
+}
+
+
+/* ══════════════════════════════════════════════
+   21. 13 寸屏幕适配
+   ══════════════════════════════════════════════ */
+
+@media screen and (max-width: 1440px) {
+  .markdown-source-view.mod-cm,
+  .markdown-preview-view {
+    padding: 20px 28px 60px 28px !important;
+    font-size: 17px;
+  }
+
+  .markdown-preview-view h1 { font-size: 1.7em; }
+  .markdown-preview-view h2 { font-size: 1.35em; }
+  .markdown-preview-view h3 { font-size: 1.15em; }
+}
+
+
+/* ══════════════════════════════════════════════
+   22. 打印 / 导出 PDF
+   ══════════════════════════════════════════════ */
+
+@media print {
+  .markdown-preview-view blockquote {
+    backdrop-filter: none;
+    box-shadow: none;
+  }
+
+  .markdown-preview-view pre {
+    box-shadow: none;
+  }
+
+  .markdown-preview-view table {
+    box-shadow: none;
+  }
+
+  .markdown-preview-view img:not(.emoji) {
+    box-shadow: none;
+  }
+}
